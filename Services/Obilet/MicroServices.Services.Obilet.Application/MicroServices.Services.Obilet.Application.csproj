@@ -13,8 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Shared\MicroService.Shared\MicroService.Shared.csproj" />
-    <ProjectReference Include="..\MicroServices.Services.Obilet.Domain\MicroServices.Services.Obilet.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Shared\MicroService.Shared\MicroService.Shared.csproj" />   
   </ItemGroup>
 
   <ItemGroup>

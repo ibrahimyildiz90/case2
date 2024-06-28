@@ -7,17 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="UAParser" Version="3.1.47" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Dtos\Bus\" />
-    <Folder Include="Dtos\Session\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>

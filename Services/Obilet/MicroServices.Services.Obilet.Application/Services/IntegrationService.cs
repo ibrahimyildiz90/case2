@@ -1,6 +1,6 @@
-﻿using MicroServices.Services.Obilet.Domain.Dtos;
-using MicroServices.Services.Obilet.Domain.Dtos.Bus;
-using MicroServices.Services.Obilet.Domain.Dtos.Session;
+﻿using MicroServices.Services.Obilet.Application.Dtos;
+using MicroServices.Services.Obilet.Application.Dtos.Bus;
+using MicroServices.Services.Obilet.Application.Dtos.Session;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Net.WebRequestMethods;
 
-namespace MicroServices.Services.Obilet.Domain.Services
+namespace MicroServices.Services.Obilet.Application.Services
 {
     public class IntegrationService : IIntegrationService
     {

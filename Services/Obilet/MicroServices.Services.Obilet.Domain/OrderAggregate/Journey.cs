@@ -1,25 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using MicroServices.Services.Obilet.Domain.Core;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MicroServices.Services.Obilet.Domain.Dtos.Bus
+namespace MicroServices.Services.Obilet.Domain.OrderAggregate
 {
-    public class BusJourneyDto
-    {
-        [JsonProperty("origin-location")]
-        public string OriginLocation { get; set; }
-
-        [JsonProperty("destination-location")]
-        public string DestinationLocation { get; set; }
-
-        [JsonProperty("journey")]
-        public JourneyDto Journey { get; set; }
-    }
-
-    public class JourneyDto
+    public class Journey : ValueObject
     {
         [JsonProperty("origin")]
         public string Origin { get; set; }
@@ -38,5 +29,11 @@ namespace MicroServices.Services.Obilet.Domain.Dtos.Bus
 
         [JsonProperty("currency")]
         public string Currency { get; set; }
+
+        public override IEnumerable<object> GetEqualityComponents()
+        {
+            yield return new object[] { Origin, Destination, Departure, Arrival, OriginalPrice, Currency };
+        }
     }
+
 }

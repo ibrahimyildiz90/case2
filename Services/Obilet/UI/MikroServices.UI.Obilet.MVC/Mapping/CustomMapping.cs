@@ -1,18 +1,16 @@
 ﻿using AutoMapper;
-using MicroServices.Services.Obilet.Application.Dtos;
+using MicroService.UI.Obilet.MVC.Models.BusModels;
+using MicroServices.Services.Obilet.Application.Dtos.Bus;
+using MikroServices.UI.Obilet.MVC.Models.BusModels;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MicroServices.Services.Order.Application.Mapping
+namespace MikroServices.UI.Obilet.MVC.Mapping
 {
     public class CustomMapping : Profile
     {
         public CustomMapping()
         {
+            CreateMap<JourneyDto,JourneyViewModel>().ReverseMap();
+            CreateMap<BusJourneyDto, BusJourneyViewModel>().ReverseMap();
             //CreateMap<Domain.OrderAggregate.Order, OrderDto>().ReverseMap();
             //CreateMap<Domain.OrderAggregate.OrderItem, OrderItemDto>().ReverseMap();
             //CreateMap<Address, AddressDto>().ReverseMap();

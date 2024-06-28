@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MicroServices.Services.Obilet.Domain.Dtos.Bus
+namespace MicroServices.Services.Obilet.Application.Dtos.Bus
 {
     public class BusJourneyReqDto
     {

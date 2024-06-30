@@ -36,11 +36,12 @@ $(document).ready(function () {
             data: filtered
         });
     });
-
+    //Getting values from local storage
     $('#origin').val(localStorage.getItem("origin")).trigger('change')
     $('#destination').val(localStorage.getItem("destination")).trigger('change')
     $('#departureDate').val(localStorage.getItem("departureDate"));
 
+    //Set Default values
     if (localStorage.getItem("destination") === "") {
         $('#origin').val(349).trigger('change')
         $('#destination').val(356).trigger('change')

@@ -16,7 +16,7 @@ namespace MicroService.UI.Obilet.MVC.Controllers
 {
     public class HomeController : Controller
     {
-        #region Fields
+
         private readonly ILogger<HomeController> _logger;
 
         private readonly IBusService _busService;
@@ -25,9 +25,9 @@ namespace MicroService.UI.Obilet.MVC.Controllers
 
         string sessionCookie;
         const string cookieKey = "session";
-        #endregion
 
-        #region Ctor
+
+
         public HomeController(ILogger<HomeController> logger, IBusService busService, ISessionService sessionService, IHttpContextAccessor httpContextAccessor)
         {
             _logger = logger;
@@ -36,9 +36,8 @@ namespace MicroService.UI.Obilet.MVC.Controllers
             _httpContextAccessor = httpContextAccessor;
             CreateSession();
         }
-        #endregion
 
-        #region Methods
+
         public ActionResult Index()
         {
             if (string.IsNullOrEmpty(sessionCookie))
@@ -60,12 +59,12 @@ namespace MicroService.UI.Obilet.MVC.Controllers
 
         public ActionResult FindJourney(int origin, int destination, DateTime departureDate)
         {
-            var request= new BusJourneyReqDto() { OriginId = origin, DestinationId = destination, DepartureDate = departureDate.ToString("yyyy-MM-dd") };
+            var request = new BusJourneyReqDto() { OriginId = origin, DestinationId = destination, DepartureDate = departureDate.ToString("yyyy-MM-dd") };
 
             var deviceSession = JsonConvert.DeserializeObject<SessionDto>(sessionCookie);
             var busJourneyList = _busService.GetBusJourneys(request, deviceSession);
 
-            var journeylist= busJourneyList.Data.OrderBy(o => o.Journey.Departure).ToList();
+            var journeylist = busJourneyList.Data.OrderBy(o => o.Journey.Departure).ToList();
 
             var viewModel = ObjectMapper.Mapper.Map<List<BusJourneyViewModel>>(journeylist);
 
@@ -83,7 +82,7 @@ namespace MicroService.UI.Obilet.MVC.Controllers
                 var session = JsonConvert.SerializeObject(_sessionService.GetSession().Data);
 
                 AddCookie(session);
-            }            
+            }
         }
 
         private void AddCookie(string value)
@@ -100,6 +99,6 @@ namespace MicroService.UI.Obilet.MVC.Controllers
         {
             return _httpContextAccessor.HttpContext.Request.Cookies[key];
         }
-        #endregion
+
     }
 }

@@ -25,7 +25,7 @@ $(document).ready(function () {
     $("#destination").select2({
         theme: 'bootstrap4',
     });
-
+    //remove sellected origin from destination list
     $('#origin').on("select2:select", function (e) {
         $("#destination").select2().empty();
         var filtered = busLocationArray.filter(function (item) {
@@ -36,6 +36,18 @@ $(document).ready(function () {
             data: filtered
         });
     });
+    //remove sellected destinaton from origin list
+    $('#destination').on("select2:select", function (e) {
+        $("#origin").select2().empty();
+        var filtered = busLocationArray.filter(function (item) {
+            return item.id !== $('#destination').val();
+        });
+        $("#origin").select2({
+            theme: 'bootstrap4',
+            data: filtered
+        });
+    });
+
     //Getting values from local storage
     $('#origin').val(localStorage.getItem("origin")).trigger('change')
     $('#destination').val(localStorage.getItem("destination")).trigger('change')

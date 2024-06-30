@@ -10,7 +10,7 @@ namespace MicroServices.Services.Obilet.Application.Services
 {
     public interface IBusService
     {
-        List<BusLocationDto> GetBusLocations(SessionDto session);
-        List<BusJourneyDto> GetBusJourneys(BusJourneyReqDto data, SessionDto session);
+        MicroService.Shared.Dtos.Response<List<BusLocationDto>> GetBusLocations(SessionDto session);
+        MicroService.Shared.Dtos.Response<List<BusJourneyDto>> GetBusJourneys(BusJourneyReqDto data, SessionDto session);
     }
 }

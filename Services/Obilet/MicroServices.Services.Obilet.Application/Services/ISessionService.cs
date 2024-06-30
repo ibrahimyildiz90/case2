@@ -11,6 +11,6 @@ namespace MicroServices.Services.Obilet.Application.Services
 {
     public interface ISessionService
     {
-        SessionDto GetSession();
+        MicroService.Shared.Dtos.Response<SessionDto> GetSession();
     }
 }

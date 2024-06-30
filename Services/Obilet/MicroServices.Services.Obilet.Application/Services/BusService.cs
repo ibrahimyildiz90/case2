@@ -18,7 +18,7 @@ namespace MicroServices.Services.Obilet.Application.Services
             _integrationService = integrationService;
         }
 
-        public List<BusJourneyDto> GetBusJourneys(BusJourneyReqDto busJourneyReqDto, SessionDto session)
+        public MicroService.Shared.Dtos.Response<List<BusJourneyDto>> GetBusJourneys(BusJourneyReqDto busJourneyReqDto, SessionDto session)
         {
             try
             {
@@ -29,7 +29,7 @@ namespace MicroServices.Services.Obilet.Application.Services
                     throw new Exception($"Error on GetBusJourneys. Details:{busJourneysResponse.Message}");
 
                 var data = busJourneysResponse.Data;
-                return data;
+                return MicroService.Shared.Dtos.Response<List<BusJourneyDto>>.Success(data, 200);
             }
             catch (Exception ex)
             {
@@ -37,7 +37,7 @@ namespace MicroServices.Services.Obilet.Application.Services
             }
         }
 
-        public List<BusLocationDto> GetBusLocations(SessionDto session)
+        public MicroService.Shared.Dtos.Response<List<BusLocationDto>> GetBusLocations(SessionDto session)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace MicroServices.Services.Obilet.Application.Services
                     throw new Exception($"Error on GetBusLocations. Details:{busLocationsResponse.Message}");
 
                 var data = busLocationsResponse.Data;
-                return data;
+                return MicroService.Shared.Dtos.Response<List<BusLocationDto>>.Success(data, 200);
             }
             catch (Exception ex)
             {

@@ -49,7 +49,7 @@ namespace MicroService.UI.Obilet.MVC.Controllers
             var busLocationData = _busService.GetBusLocations(deviceSession);
 
             var busLocationList = new List<SelectListItem>();
-            foreach (var location in busLocationData)
+            foreach (var location in busLocationData.Data)
             {
                 busLocationList.Add(new SelectListItem { Text = location.Name, Value = location.Id.ToString() });
             }
@@ -65,9 +65,9 @@ namespace MicroService.UI.Obilet.MVC.Controllers
             var deviceSession = JsonConvert.DeserializeObject<SessionDto>(sessionCookie);
             var busJourneyList = _busService.GetBusJourneys(request, deviceSession);
 
-            busJourneyList = busJourneyList.OrderBy(o => o.Journey.Departure).ToList();
+            var journeylist= busJourneyList.Data.OrderBy(o => o.Journey.Departure).ToList();
 
-            var viewModel = ObjectMapper.Mapper.Map<List<BusJourneyViewModel>>(busJourneyList);
+            var viewModel = ObjectMapper.Mapper.Map<List<BusJourneyViewModel>>(journeylist);
 
 
             return View("JourneyIndex", viewModel);
@@ -80,7 +80,7 @@ namespace MicroService.UI.Obilet.MVC.Controllers
 
             if (string.IsNullOrEmpty(sessionCookie))
             {
-                var session = JsonConvert.SerializeObject(_sessionService.GetSession());
+                var session = JsonConvert.SerializeObject(_sessionService.GetSession().Data);
 
                 AddCookie(session);
             }            

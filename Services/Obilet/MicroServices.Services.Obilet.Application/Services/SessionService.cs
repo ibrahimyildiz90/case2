@@ -22,7 +22,7 @@ namespace MicroServices.Services.Obilet.Application.Services
             _httpContextAccessor = httpContextAccessor;
         }
 
-        public SessionDto GetSession()
+        public MicroService.Shared.Dtos.Response<SessionDto> GetSession()
         {
             try
             {
@@ -43,7 +43,7 @@ namespace MicroServices.Services.Obilet.Application.Services
                     throw new Exception($"Error on GetSession. Details:{sessionResponse.Message}");
 
                 var data = sessionResponse.Data;
-                return data;
+                return MicroService.Shared.Dtos.Response<SessionDto>.Success(data, 200);
             }
             catch (Exception ex)
             {

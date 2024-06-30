@@ -17,10 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{2601A5AD-D77B-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroServices.Services.Obilet.Application", "Services\Obilet\MicroServices.Services.Obilet.Application\MicroServices.Services.Obilet.Application.csproj", "{0AF9CDF9-44A2-43FE-A5F7-59F76FCC92A9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroServices.Services.Obilet.Domain", "Services\Obilet\MicroServices.Services.Obilet.Domain\MicroServices.Services.Obilet.Domain.csproj", "{383E6511-1BA9-47CB-BADF-2B607057A869}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroServices.Services.Obilet.Domain.Core", "Services\Obilet\MicroServices.Services.Obilet.Domain.Core\MicroServices.Services.Obilet.Domain.Core.csproj", "{013BBC0D-BB4F-4E29-AAB7-55D51B341937}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MikroServices.UI.Obilet.MVC", "Services\Obilet\UI\MikroServices.UI.Obilet.MVC\MikroServices.UI.Obilet.MVC.csproj", "{A1C5D1D9-9051-4F24-ACB8-8B83D4DBF301}"
 EndProject
 Global
@@ -37,14 +33,6 @@ Global
 		{0AF9CDF9-44A2-43FE-A5F7-59F76FCC92A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AF9CDF9-44A2-43FE-A5F7-59F76FCC92A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AF9CDF9-44A2-43FE-A5F7-59F76FCC92A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{383E6511-1BA9-47CB-BADF-2B607057A869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{383E6511-1BA9-47CB-BADF-2B607057A869}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{383E6511-1BA9-47CB-BADF-2B607057A869}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{383E6511-1BA9-47CB-BADF-2B607057A869}.Release|Any CPU.Build.0 = Release|Any CPU
-		{013BBC0D-BB4F-4E29-AAB7-55D51B341937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{013BBC0D-BB4F-4E29-AAB7-55D51B341937}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{013BBC0D-BB4F-4E29-AAB7-55D51B341937}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{013BBC0D-BB4F-4E29-AAB7-55D51B341937}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A1C5D1D9-9051-4F24-ACB8-8B83D4DBF301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A1C5D1D9-9051-4F24-ACB8-8B83D4DBF301}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1C5D1D9-9051-4F24-ACB8-8B83D4DBF301}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -58,8 +46,6 @@ Global
 		{566FA8CF-25E3-489C-9C4D-5BB210201CB3} = {F6DAE159-F743-4746-AC87-94E9A25C31DA}
 		{2601A5AD-D77B-4DA6-92BB-3C1ECD74ED6F} = {E2D8D948-3796-4A11-A54D-BEDD44E12BBA}
 		{0AF9CDF9-44A2-43FE-A5F7-59F76FCC92A9} = {E2D8D948-3796-4A11-A54D-BEDD44E12BBA}
-		{383E6511-1BA9-47CB-BADF-2B607057A869} = {E2D8D948-3796-4A11-A54D-BEDD44E12BBA}
-		{013BBC0D-BB4F-4E29-AAB7-55D51B341937} = {E2D8D948-3796-4A11-A54D-BEDD44E12BBA}
 		{A1C5D1D9-9051-4F24-ACB8-8B83D4DBF301} = {2601A5AD-D77B-4DA6-92BB-3C1ECD74ED6F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

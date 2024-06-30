@@ -1,5 +1,5 @@
-using MicroService.UI.Obilet.MVC.Configuration;
 using MicroServices.Services.Obilet.Application.Services;
+using MicroServices.Services.Obilet.Application.Settings;
 
 //using MicroService.UI.Obilet.MVC.Interfaces;
 //using MicroService.UI.Obilet.MVC.Services;

@@ -1,6 +1,7 @@
 ﻿using MicroServices.Services.Obilet.Application.Dtos;
 using MicroServices.Services.Obilet.Application.Dtos.Bus;
 using MicroServices.Services.Obilet.Application.Dtos.Session;
+using MicroServices.Services.Obilet.Application.Settings;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -15,18 +16,33 @@ namespace MicroServices.Services.Obilet.Application.Services
 {
     public class IntegrationService : IIntegrationService
     {
-        private const string apiUrl = "https://v2-api.obilet.com/api/";
+        private readonly string apiUrl;
+        private readonly string apiClientToken;
         private readonly HttpClient _client;
 
-        public IntegrationService(IHttpClientFactory httpClientFactory)
+        public IntegrationService(IHttpClientFactory httpClientFactory, AppSettings appSettings)
         {
             _client = httpClientFactory.CreateClient();
+            apiUrl = appSettings.ApiUrl;
+            apiClientToken = appSettings.ApiClientToken;
         }
 
         private void AddAuthorization()
         {
-            if (!_client.DefaultRequestHeaders.Contains("Authorization"))
-                _client.DefaultRequestHeaders.Add("Authorization", "Basic JEcYcEMyantZV095WVc3G2JtVjNZbWx1");
+            var auth = string.Concat("Basic", " ", apiClientToken);
+
+            if (_client.DefaultRequestHeaders.Contains("Authorization"))
+            {
+                if (_client.DefaultRequestHeaders.Authorization.ToString() != auth)
+                {
+                    _client.DefaultRequestHeaders.Remove("Authorization");
+                    _client.DefaultRequestHeaders.Add("Authorization", auth);
+                }
+            }
+            else
+            {
+                _client.DefaultRequestHeaders.Add("Authorization", auth);
+            }
         }
 
         private StringContent CreateStringContent(object _object)

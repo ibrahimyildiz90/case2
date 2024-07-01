@@ -13,6 +13,8 @@ $(document).ready(function () {
         theme: 'bootstrap4',
     });
 
+
+    // Filtered the sellected item from origin or destination
     var busLocationArray = [];
 
     $("#origin > option").each(function () {
